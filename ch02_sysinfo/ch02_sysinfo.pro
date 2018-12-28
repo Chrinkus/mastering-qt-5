@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,10 +28,14 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         sysinfo.cpp \
+    sysinfowidget.cpp \
+    cpuwidget.cpp
 
 HEADERS += \
         mainwindow.h \
         sysinfo.h \
+    sysinfowidget.h \
+    cpuwidget.h
 
 windows {
         SOURCES += sysinfowindowsimpl.cpp
