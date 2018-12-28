@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     SysInfo::instance().init();
+    ui->centralWidget->setLayout(new QHBoxLayout());	// errata addition
     ui->centralWidget->layout()->addWidget(&mCpuWidget);
 }
 
