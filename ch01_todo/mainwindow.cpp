@@ -59,6 +59,7 @@ void MainWindow::taskStatusChanged(Task*)
 
 void MainWindow::updateStatus()
 {
+    // ala Scott Meyers via Kate Gregory
     auto completedCount = std::count_if(std::begin(mTasks), std::end(mTasks),
                    [](const auto t) { return t->isCompleted(); });
 
