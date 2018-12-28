@@ -45,7 +45,7 @@ double SysInfoMacImpl::memoryUsed()
                       (host_info64_t)&vmStats,
                       &count);
 
-    qulonglong freeMemory = (int64_t)vmStats.free_count * (int64_t)page_size;
+    qulonglong freeMemory = (int64_t)vmStats.free_count * (int64_t)pageSize;
 
     qulonglong totalMemoryUsed = ((int64_t)vmStats.active_count +
                                   (int64_t)vmStats.inactive_count +
