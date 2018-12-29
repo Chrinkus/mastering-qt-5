@@ -14,7 +14,7 @@ I had obviously been exposed to the Signals and Slots pattern in previous Qt exp
 
 ### A Clash of Styles
 
-One difficulty I have is accepting the authors' style of C++. Coming from 'Programming Principles and Practice Using C++' I have a difficult time not following conventions set forth by Bjarne Stroustrup himself. Small things like using braces for object creation instead of parenthesis and prefixing member variables with lowercase 'm' are minor annoyances but the use of C-style casts is downright distasteful. I'll have to potentially come up with a 'style-interpretation guide' of my own for this repo.
+One difficulty I have is accepting the authors' style of C++. Coming from 'Programming Principles and Practice Using C++' I have a difficult time not following conventions set forth by Bjarne Stroustrup himself. Small things like using parenthesis for object creation instead of braces and prefixing member variables with lowercase 'm' are minor annoyances but the use of C-style casts is downright distasteful. I'll have to potentially come up with a 'style-interpretation guide' of my own for this repo.
 
 There is also the use of a ranged for-loop that is suspect. The loop is used to count the number of completed tasks and takes six lines to achieve what `std::count_if` accomplishes in two. The suggestion of using algorithms to express common functionality is old and should probably be the lesson to be taught in this instance.
 
