@@ -42,15 +42,16 @@ double SysInfoMacImpl::memoryUsed()
 
     host_statistics64(machPort,
                       HOST_VM_INFO,
-                      (host_info64_t)&vmStats,
+                      reinterpret_cast<host_info64_t>(&vmStats),
                       &count);
 
-    qulonglong freeMemory = (int64_t)vmStats.free_count * (int64_t)page_size;
+    qulonglong freeMemory = static_cast<qulonglong>(vmStats.free_count) *
+                            static_cast<qulonglong>(pageSize);
 
-    qulonglong totalMemoryUsed = ((int64_t)vmStats.active_count +
-                                  (int64_t)vmStats.inactive_count +
-                                  (int64_t)vmStats.wire_count) *
-                                  (int64_t)pageSize;
+    qulonglong totalMemoryUsed = (static_cast<qulonglong>(vmStats.active_count) +
+                                  static_cast<qulonglong>(vmStats.inactive_count) +
+                                  static_cast<qulonglong>(vmStats.wire_count)
+                                  ) * static_cast<qulonglong>(pageSize);
 
     qulonglong totalMemory = freeMemory + totalMemoryUsed;
 
@@ -62,7 +63,7 @@ double SysInfoMacImpl::memoryUsed()
 QVector<qulonglong> SysInfoMacImpl::cpuRawData()
 {
     host_cpu_load_info_data_t cpuInfo;
-    mach_msg_type_number_t cpuCount = HOST_CPU_LOAD_INFO_COUNT;
+    mach_msg_type_number_t cpuCount = HOST_CPU_LOAD_INFO_COUNT;	// macOS macro
     QVector<qulonglong> rawData;
     qulonglong totalUser = 0,
                totalUserNice = 0,
@@ -70,7 +71,7 @@ QVector<qulonglong> SysInfoMacImpl::cpuRawData()
                totalIdle = 0;
     host_statistics (mach_host_self(),
                      HOST_CPU_LOAD_INFO,
-                     (host_info_t)&cpuInfo,
+                     reinterpret_cast<host_info_t>(&cpuInfo),
                      &cpuCount);
 
     for (unsigned int i = 0; i < cpuCount; ++i) {
