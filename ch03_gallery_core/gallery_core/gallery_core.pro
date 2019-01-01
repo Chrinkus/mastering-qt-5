@@ -31,7 +31,8 @@ SOURCES += \
     databasemanager.cpp \
     albumdao.cpp \
     picturedao.cpp \
-    albummodel.cpp
+    albummodel.cpp \
+    picturemodel.cpp
 
 HEADERS += \
         album.h \
@@ -40,4 +41,5 @@ HEADERS += \
     databasemanager.h \
     albumdao.h \
     picturedao.h \
-    albummodel.h
+    albummodel.h \
+    picturemodel.h
