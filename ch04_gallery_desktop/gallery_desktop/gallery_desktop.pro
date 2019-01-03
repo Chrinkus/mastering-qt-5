@@ -27,22 +27,28 @@ CONFIG += c++14
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    albumlistwidget.cpp \
-    thumbnailproxymodel.cpp \
-    albumwidget.cpp \
-    picturedelegate.cpp
+        albumlistwidget.cpp \
+        thumbnailproxymodel.cpp \
+        albumwidget.cpp \
+    picturedelegate.cpp \
+    picturewidget.cpp \
+    gallerywidget.cpp
 
 HEADERS += \
         mainwindow.h \
     albumlistwidget.h \
     thumbnailproxymodel.h \
     albumwidget.h \
-    picturedelegate.h
+    picturedelegate.h \
+    picturewidget.h \
+    gallerywidget.h
 
 FORMS += \
         mainwindow.ui \
     albumlistwidget.ui \
-    albumwidget.ui
+    albumwidget.ui \
+    picturewidget.ui \
+    gallerywidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
