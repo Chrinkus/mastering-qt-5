@@ -1,0 +1,12 @@
+#ifndef GALLERY_CORE_GLOBAL_H
+#define GALLERY_CORE_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(GALLERY_CORE_LIBRARY)
+#  define GALLERY_CORESHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define GALLERY_CORESHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // GALLERY_CORE_GLOBAL_H
